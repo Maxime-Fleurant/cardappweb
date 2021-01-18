@@ -1,0 +1,6 @@
+type Card @model @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+  id: ID!
+  name: String!
+  description: String!
+}
+ 

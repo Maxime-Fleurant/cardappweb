@@ -1,0 +1,22 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cardappweb-dev-104515-authRole",
+      "UnauthRoleArn": "arn:aws:iam::451470271607:role/amplify-cardappweb-dev-104515-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::451470271607:role/amplify-cardappweb-dev-104515-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-cardappweb-dev-104515-deployment",
+      "UnauthRoleName": "amplify-cardappweb-dev-104515-unauthRole",
+      "StackName": "amplify-cardappweb-dev-104515",
+      "StackId": "arn:aws:cloudformation:eu-west-2:451470271607:stack/amplify-cardappweb-dev-104515/5fae5650-5716-11eb-a23a-02e8cd1052f8",
+      "AmplifyAppId": "dnxs4vym9t082"
+    },
+    "categories": {
+      "auth": {
+        "cardappweb56043ef9": {},
+        "cardappweb": {},
+        "cardappwebe743c67a": {}
+      }
+    }
+  }
+}
