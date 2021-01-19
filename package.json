@@ -18,6 +18,7 @@
     "aws-amplify": "^3.3.14",
     "aws-appsync-auth-link": "^3.0.2",
     "aws-appsync-subscription-link": "^3.0.4",
+    "framer-motion": "^3.2.1",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

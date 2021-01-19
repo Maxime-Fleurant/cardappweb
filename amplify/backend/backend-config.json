@@ -27,5 +27,29 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "function": {
+    "S3Trigger5c78ed65": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true
+    }
+  },
+  "storage": {
+    "s39701e567": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger5c78ed65",
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ]
+        }
+      ]
+    }
   }
 }

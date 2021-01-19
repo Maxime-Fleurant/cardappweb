@@ -8,6 +8,7 @@ import { ApolloProvider, ApolloClient, ApolloLink, InMemoryCache } from '@apollo
 import appSyncConfig from '../aws-exports';
 import Card from '../features/Card';
 import CardList from '../features/CardList';
+import CreateCard from '../features/CreateCard';
 
 Amplify.configure(appSyncConfig);
 
@@ -41,8 +42,11 @@ const App: FunctionComponent = () => (
   <ApolloProvider client={client}>
     <Router>
       <div className="grid grid-cols-12 gap-4 p-4 items-center">
-        <div className="col-start-1 col-end-3 text-4xl font-semibold text-gray-800">
+        <div className="col-start-1 col-end-3 text-8xl font-semibold text-gray-800">
           <Link to="/">CARDS</Link>
+        </div>
+        <div className="col-start-11 col-end-12 text-2xl font-light text-gray-800 cursor-pointer text-right">
+          <Link to="/newcard">New</Link>
         </div>
         <div
           className="col-start-12 col-end-13 text-2xl font-light text-gray-800 cursor-pointer text-right"
@@ -54,6 +58,9 @@ const App: FunctionComponent = () => (
       <Switch>
         <Route path="/card">
           <Card />
+        </Route>
+        <Route path="/newcard">
+          <CreateCard />
         </Route>
         <Route path="/">
           <CardList />
