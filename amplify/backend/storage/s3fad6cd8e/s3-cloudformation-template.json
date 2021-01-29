@@ -85,19 +85,19 @@
 	
     
     
-        "functionS3Trigger5c78ed65Name": {
+        "functionS3Triggera17aa1bdName": {
             "Type": "String",
-            "Default": "functionS3Trigger5c78ed65Name"
+            "Default": "functionS3Triggera17aa1bdName"
         },
         
-        "functionS3Trigger5c78ed65Arn": {
+        "functionS3Triggera17aa1bdArn": {
             "Type": "String",
-            "Default": "functionS3Trigger5c78ed65Arn"
+            "Default": "functionS3Triggera17aa1bdArn"
         },
         
-        "functionS3Trigger5c78ed65LambdaExecutionRole": {
+        "functionS3Triggera17aa1bdLambdaExecutionRole": {
             "Type": "String",
-            "Default": "functionS3Trigger5c78ed65LambdaExecutionRole"
+            "Default": "functionS3Triggera17aa1bdLambdaExecutionRole"
         }
         
         
@@ -229,13 +229,13 @@
                         {
                             "Event": "s3:ObjectCreated:*",
                             "Function": {
-                                "Ref": "functionS3Trigger5c78ed65Arn"
+                                "Ref": "functionS3Triggera17aa1bdArn"
                             }
                         },
                         {
                             "Event": "s3:ObjectRemoved:*",
                             "Function": {
-                                "Ref": "functionS3Trigger5c78ed65Arn"
+                                "Ref": "functionS3Triggera17aa1bdArn"
                             }
                         }
                     ]
@@ -277,7 +277,7 @@
           "Properties": {
               "Action": "lambda:InvokeFunction",
               "FunctionName": {
-                  "Ref": "functionS3Trigger5c78ed65Name"
+                  "Ref": "functionS3Triggera17aa1bdName"
               },
               "Principal": "s3.amazonaws.com",
               "SourceAccount": {
@@ -337,7 +337,7 @@
                 "PolicyName": "amplify-lambda-execution-policy",
                 "Roles": [
                     {
-                        "Ref": "functionS3Trigger5c78ed65LambdaExecutionRole"
+                        "Ref": "functionS3Triggera17aa1bdLambdaExecutionRole"
                     }
                 ],
                 "PolicyDocument": {

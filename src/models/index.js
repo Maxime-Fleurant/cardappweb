@@ -4,8 +4,11 @@ import { schema } from './schema';
 
 
 
-const { Card } = initSchema(schema);
+const { Link, Image, Note, Card } = initSchema(schema);
 
 export {
+  Link,
+  Image,
+  Note,
   Card
 };

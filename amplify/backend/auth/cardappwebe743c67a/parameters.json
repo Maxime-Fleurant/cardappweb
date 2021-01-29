@@ -1,6 +1,6 @@
 {
     "identityPoolName": "cardappwebe743c67a_identitypool_e743c67a",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "cardape743c67a",
     "userPoolName": "cardappwebe743c67a_userpool_e743c67a",
     "autoVerifiedAttributes": [

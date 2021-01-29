@@ -1,24 +1,38 @@
+import { gql, useQuery } from '@apollo/client';
 import { FunctionComponent } from 'react';
-
-import test2 from '../../img/test2.jpg';
+import { ListCardsQuery, ListCardsQueryVariables } from '../../API';
+import { listCards } from '../../graphql/queries';
+import SingleCard from './SingleCard';
 
 const CardList: FunctionComponent = () => {
+  const { data } = useQuery<ListCardsQuery, ListCardsQueryVariables>(
+    gql`
+      ${listCards}
+    `,
+    {
+      fetchPolicy: 'cache-and-network',
+      nextFetchPolicy: 'cache-first',
+      variables: { filter: { cardParentId: { eq: 'null' } } },
+    }
+  );
+
+  const cardList =
+    data &&
+    data.listCards &&
+    data.listCards.items &&
+    data.listCards.items.map((card) => {
+      if (card) {
+        return (
+          <SingleCard key={card.id} name={card.name} coverImage={card.coverImage} id={card.id} />
+        );
+      }
+
+      return undefined;
+    });
+
   return (
     <div className="grid xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 gap-4 p-4">
-      {[...new Array(17)].map(() => {
-        return (
-          <div
-            className=" h-48 w-full bg-gray-100 flex justify-items-start items-end text-4xl bg-cover bg-center p-3 text-gray-50 cursor-pointer"
-            style={{
-              backgroundImage: `linear-gradient(180deg, rgba(
-              31, 41, 55, .0) , rgba(
-                31, 41, 55, .5) ),url(${test2})`,
-            }}
-          >
-            Design Thinking
-          </div>
-        );
-      })}
+      {cardList}
     </div>
   );
 };

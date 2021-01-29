@@ -1,6 +1,34 @@
-type Card @model @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+type Link @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+  id: ID!
+  link: String
+  cardID: ID!
+  img: String
+  title: String
+}
+
+type Image @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+  id: ID!
+  image: String
+  cardID: ID!
+}
+
+type Note @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+  id: ID!
+  text: String!
+  cardID: ID!
+  title: String
+}
+
+type Card @model @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) @key(name: "ByParent", fields: ["cardParentId"]) {
   id: ID!
   name: String!
   description: String!
+  coverImage: String
+  cardParentId: ID
+  cardParent: Card @connection
+  child: [Card] @connection(keyName: "ByParent", fields: ["id"])
+  Notes: [Note] @connection(keyName: "byCard", fields: ["id"])
+  Images: [Image] @connection(keyName: "byCard", fields: ["id"])
+  Links: [Link] @connection(keyName: "byCard", fields: ["id"])
 }
- 
+  

@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/compute",
+            "lambdaFunction": "cardappweb24a94fc4",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/compute"
+        }
+    ],
+    "resourceName": "api15cd2125",
+    "apiName": "api15cd2125",
+    "functionArns": [
+        {
+            "lambdaFunction": "cardappweb24a94fc4"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-cardappweb-dev-104515-authRole",
+        "unAuthRoleName": "amplify-cardappweb-dev-104515-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "cardappweb24a94fc4",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

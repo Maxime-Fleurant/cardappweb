@@ -18,6 +18,20 @@
           ]
         }
       }
+    },
+    "api15cd2125": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "cardappweb24a94fc4",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -29,20 +43,25 @@
     }
   },
   "function": {
-    "S3Trigger5c78ed65": {
+    "S3Triggera17aa1bd": {
       "service": "Lambda",
       "providerPlugin": "awscloudformation",
       "build": true
+    },
+    "cardappweb24a94fc4": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "storage": {
-    "s39701e567": {
+    "s3fad6cd8e": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "S3Trigger5c78ed65",
+          "resourceName": "S3Triggera17aa1bd",
           "attributes": [
             "Name",
             "Arn",
