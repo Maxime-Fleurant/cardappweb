@@ -1,8 +1,8 @@
 import { gql, useQuery } from '@apollo/client';
 import { FunctionComponent } from 'react';
 import { ListCardsQuery, ListCardsQueryVariables } from '../../API';
+import CardBlok from '../../common/CardBlok';
 import { listCards } from '../../graphql/queries';
-import SingleCard from './SingleCard';
 
 const CardList: FunctionComponent = () => {
   const { data } = useQuery<ListCardsQuery, ListCardsQueryVariables>(
@@ -22,9 +22,7 @@ const CardList: FunctionComponent = () => {
     data.listCards.items &&
     data.listCards.items.map((card) => {
       if (card) {
-        return (
-          <SingleCard key={card.id} name={card.name} coverImage={card.coverImage} id={card.id} />
-        );
+        return <CardBlok key={card.id} title={card.name} img={card.coverImage} id={card.id} />;
       }
 
       return undefined;

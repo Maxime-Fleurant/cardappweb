@@ -1,25 +1,49 @@
-type Link @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+type Tag @model @auth(rules: [{ allow: owner, operations: [read, create, update, delete] }]) {
   id: ID!
-  link: String
+  name: String!
+  TagCards: [TagCard] @connection(keyName: "byTag", fields: ["id"])
+  TagLinks: [TagLink] @connection(keyName: "byTag", fields: ["id"])
+  TagNotes: [TagNote] @connection(keyName: "byTag", fields: ["id"])
+  TagImages: [TagImage] @connection(keyName: "byTag", fields: ["id"])
+}
+
+type Link
+  @model
+  @key(name: "byCard", fields: ["cardID"])
+  @auth(rules: [{ allow: owner, operations: [read, create, update, delete] }]) {
+  id: ID!
+  link: String!
   cardID: ID!
   img: String
   title: String
+  tags: [TagLink] @connection(keyName: "byLink", fields: ["id"])
 }
 
-type Image @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+type Image
+  @model
+  @key(name: "byCard", fields: ["cardID"])
+  @auth(rules: [{ allow: owner, operations: [read, create, update, delete] }]) {
   id: ID!
-  image: String
+  image: String!
   cardID: ID!
+  tags: [TagImage] @connection(keyName: "byImage", fields: ["id"])
 }
 
-type Note @model @key(name: "byCard", fields: ["cardID"]) @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) {
+type Note
+  @model
+  @key(name: "byCard", fields: ["cardID"])
+  @auth(rules: [{ allow: owner, operations: [read, create, update, delete] }]) {
   id: ID!
   text: String!
   cardID: ID!
   title: String
+  tags: [TagNote] @connection(keyName: "byNote", fields: ["id"])
 }
 
-type Card @model @auth(rules: [{allow: owner, operations: [read, create, update, delete]}]) @key(name: "ByParent", fields: ["cardParentId"]) {
+type Card
+  @model
+  @auth(rules: [{ allow: owner, operations: [read, create, update, delete] }])
+  @key(name: "ByParent", fields: ["cardParentId"]) {
   id: ID!
   name: String!
   description: String!
@@ -30,5 +54,53 @@ type Card @model @auth(rules: [{allow: owner, operations: [read, create, update,
   Notes: [Note] @connection(keyName: "byCard", fields: ["id"])
   Images: [Image] @connection(keyName: "byCard", fields: ["id"])
   Links: [Link] @connection(keyName: "byCard", fields: ["id"])
+  tags: [TagCard] @connection(keyName: "byCard", fields: ["id"])
 }
-  
+
+type TagCard
+  @model(queries: null)
+  @key(name: "byTag", fields: ["tagID", "cardID"])
+  @key(name: "byCard", fields: ["cardID", "tagID"])
+  @auth(rules: [{ allow: private }, { allow: owner, operations: [read, create, update, delete] }]) {
+  id: ID!
+  tagID: ID!
+  cardID: ID!
+  tag: Tag! @connection(fields: ["tagID"])
+  card: Card! @connection(fields: ["cardID"])
+}
+
+type TagLink
+  @model(queries: null)
+  @key(name: "byTag", fields: ["tagID", "linkID"])
+  @key(name: "byLink", fields: ["linkID", "tagID"])
+  @auth(rules: [{ allow: private }, { allow: owner, operations: [read, create, update, delete] }]) {
+  id: ID!
+  tagID: ID!
+  linkID: ID!
+  tag: Tag! @connection(fields: ["tagID"])
+  link: Link! @connection(fields: ["linkID"])
+}
+
+type TagNote
+  @model(queries: null)
+  @key(name: "byTag", fields: ["tagID", "noteID"])
+  @key(name: "byNote", fields: ["noteID", "tagID"])
+  @auth(rules: [{ allow: private }, { allow: owner, operations: [read, create, update, delete] }]) {
+  id: ID!
+  tagID: ID!
+  noteID: ID!
+  tag: Tag! @connection(fields: ["tagID"])
+  note: Note! @connection(fields: ["noteID"])
+}
+
+type TagImage
+  @model(queries: null)
+  @key(name: "byTag", fields: ["tagID", "imageID"])
+  @key(name: "byImage", fields: ["imageID", "tagID"])
+  @auth(rules: [{ allow: private }, { allow: owner, operations: [read, create, update, delete] }]) {
+  id: ID!
+  tagID: ID!
+  imageID: ID!
+  tag: Tag! @connection(fields: ["tagID"])
+  image: Image! @connection(fields: ["imageID"])
+}

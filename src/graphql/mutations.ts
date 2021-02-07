@@ -2,6 +2,237 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createTag = /* GraphQL */ `
+  mutation CreateTag(
+    $input: CreateTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    createTag(input: $input, condition: $condition) {
+      id
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+      TagCards {
+        items {
+          id
+          tagID
+          cardID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagLinks {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagNotes {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagImages {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const updateTag = /* GraphQL */ `
+  mutation UpdateTag(
+    $input: UpdateTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    updateTag(input: $input, condition: $condition) {
+      id
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+      TagCards {
+        items {
+          id
+          tagID
+          cardID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagLinks {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagNotes {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagImages {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const deleteTag = /* GraphQL */ `
+  mutation DeleteTag(
+    $input: DeleteTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    deleteTag(input: $input, condition: $condition) {
+      id
+      name
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+      TagCards {
+        items {
+          id
+          tagID
+          cardID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagLinks {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagNotes {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      TagImages {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
 export const createLink = /* GraphQL */ `
   mutation CreateLink(
     $input: CreateLinkInput!
@@ -19,6 +250,21 @@ export const createLink = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -39,6 +285,21 @@ export const updateLink = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -59,6 +320,21 @@ export const deleteLink = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          linkID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -77,6 +353,21 @@ export const createImage = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -95,6 +386,21 @@ export const updateImage = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -113,6 +419,21 @@ export const deleteImage = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          imageID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -132,6 +453,21 @@ export const createNote = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -151,6 +487,21 @@ export const updateNote = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -170,6 +521,21 @@ export const deleteNote = /* GraphQL */ `
       createdAt
       updatedAt
       owner
+      tags {
+        items {
+          id
+          tagID
+          noteID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -279,6 +645,10 @@ export const createCard = /* GraphQL */ `
           nextToken
           startedAt
         }
+        tags {
+          nextToken
+          startedAt
+        }
       }
       child {
         items {
@@ -287,6 +657,21 @@ export const createCard = /* GraphQL */ `
           description
           coverImage
           cardParentId
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      tags {
+        items {
+          id
+          tagID
+          cardID
           _version
           _deleted
           _lastChangedAt
@@ -406,6 +791,10 @@ export const updateCard = /* GraphQL */ `
           nextToken
           startedAt
         }
+        tags {
+          nextToken
+          startedAt
+        }
       }
       child {
         items {
@@ -414,6 +803,21 @@ export const updateCard = /* GraphQL */ `
           description
           coverImage
           cardParentId
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      tags {
+        items {
+          id
+          tagID
+          cardID
           _version
           _deleted
           _lastChangedAt
@@ -533,6 +937,10 @@ export const deleteCard = /* GraphQL */ `
           nextToken
           startedAt
         }
+        tags {
+          nextToken
+          startedAt
+        }
       }
       child {
         items {
@@ -551,6 +959,831 @@ export const deleteCard = /* GraphQL */ `
         nextToken
         startedAt
       }
+      tags {
+        items {
+          id
+          tagID
+          cardID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const createTagCard = /* GraphQL */ `
+  mutation CreateTagCard(
+    $input: CreateTagCardInput!
+    $condition: ModelTagCardConditionInput
+  ) {
+    createTagCard(input: $input, condition: $condition) {
+      id
+      tagID
+      cardID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      card {
+        id
+        name
+        description
+        coverImage
+        cardParentId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Links {
+          nextToken
+          startedAt
+        }
+        Images {
+          nextToken
+          startedAt
+        }
+        Notes {
+          nextToken
+          startedAt
+        }
+        owner
+        cardParent {
+          id
+          name
+          description
+          coverImage
+          cardParentId
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        child {
+          nextToken
+          startedAt
+        }
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const updateTagCard = /* GraphQL */ `
+  mutation UpdateTagCard(
+    $input: UpdateTagCardInput!
+    $condition: ModelTagCardConditionInput
+  ) {
+    updateTagCard(input: $input, condition: $condition) {
+      id
+      tagID
+      cardID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      card {
+        id
+        name
+        description
+        coverImage
+        cardParentId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Links {
+          nextToken
+          startedAt
+        }
+        Images {
+          nextToken
+          startedAt
+        }
+        Notes {
+          nextToken
+          startedAt
+        }
+        owner
+        cardParent {
+          id
+          name
+          description
+          coverImage
+          cardParentId
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        child {
+          nextToken
+          startedAt
+        }
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const deleteTagCard = /* GraphQL */ `
+  mutation DeleteTagCard(
+    $input: DeleteTagCardInput!
+    $condition: ModelTagCardConditionInput
+  ) {
+    deleteTagCard(input: $input, condition: $condition) {
+      id
+      tagID
+      cardID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      card {
+        id
+        name
+        description
+        coverImage
+        cardParentId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Links {
+          nextToken
+          startedAt
+        }
+        Images {
+          nextToken
+          startedAt
+        }
+        Notes {
+          nextToken
+          startedAt
+        }
+        owner
+        cardParent {
+          id
+          name
+          description
+          coverImage
+          cardParentId
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        child {
+          nextToken
+          startedAt
+        }
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const createTagLink = /* GraphQL */ `
+  mutation CreateTagLink(
+    $input: CreateTagLinkInput!
+    $condition: ModelTagLinkConditionInput
+  ) {
+    createTagLink(input: $input, condition: $condition) {
+      id
+      tagID
+      linkID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      link {
+        id
+        link
+        cardID
+        img
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const updateTagLink = /* GraphQL */ `
+  mutation UpdateTagLink(
+    $input: UpdateTagLinkInput!
+    $condition: ModelTagLinkConditionInput
+  ) {
+    updateTagLink(input: $input, condition: $condition) {
+      id
+      tagID
+      linkID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      link {
+        id
+        link
+        cardID
+        img
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const deleteTagLink = /* GraphQL */ `
+  mutation DeleteTagLink(
+    $input: DeleteTagLinkInput!
+    $condition: ModelTagLinkConditionInput
+  ) {
+    deleteTagLink(input: $input, condition: $condition) {
+      id
+      tagID
+      linkID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      link {
+        id
+        link
+        cardID
+        img
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const createTagNote = /* GraphQL */ `
+  mutation CreateTagNote(
+    $input: CreateTagNoteInput!
+    $condition: ModelTagNoteConditionInput
+  ) {
+    createTagNote(input: $input, condition: $condition) {
+      id
+      tagID
+      noteID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      note {
+        id
+        text
+        cardID
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const updateTagNote = /* GraphQL */ `
+  mutation UpdateTagNote(
+    $input: UpdateTagNoteInput!
+    $condition: ModelTagNoteConditionInput
+  ) {
+    updateTagNote(input: $input, condition: $condition) {
+      id
+      tagID
+      noteID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      note {
+        id
+        text
+        cardID
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const deleteTagNote = /* GraphQL */ `
+  mutation DeleteTagNote(
+    $input: DeleteTagNoteInput!
+    $condition: ModelTagNoteConditionInput
+  ) {
+    deleteTagNote(input: $input, condition: $condition) {
+      id
+      tagID
+      noteID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      note {
+        id
+        text
+        cardID
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const createTagImage = /* GraphQL */ `
+  mutation CreateTagImage(
+    $input: CreateTagImageInput!
+    $condition: ModelTagImageConditionInput
+  ) {
+    createTagImage(input: $input, condition: $condition) {
+      id
+      tagID
+      imageID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      image {
+        id
+        image
+        cardID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const updateTagImage = /* GraphQL */ `
+  mutation UpdateTagImage(
+    $input: UpdateTagImageInput!
+    $condition: ModelTagImageConditionInput
+  ) {
+    updateTagImage(input: $input, condition: $condition) {
+      id
+      tagID
+      imageID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      image {
+        id
+        image
+        cardID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
+    }
+  }
+`;
+export const deleteTagImage = /* GraphQL */ `
+  mutation DeleteTagImage(
+    $input: DeleteTagImageInput!
+    $condition: ModelTagImageConditionInput
+  ) {
+    deleteTagImage(input: $input, condition: $condition) {
+      id
+      tagID
+      imageID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      tag {
+        id
+        name
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        TagCards {
+          nextToken
+          startedAt
+        }
+        TagLinks {
+          nextToken
+          startedAt
+        }
+        TagNotes {
+          nextToken
+          startedAt
+        }
+        TagImages {
+          nextToken
+          startedAt
+        }
+      }
+      image {
+        id
+        image
+        cardID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+        tags {
+          nextToken
+          startedAt
+        }
+      }
+      owner
     }
   }
 `;

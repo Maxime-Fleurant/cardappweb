@@ -1,10 +1,10 @@
 const ogs = require('open-graph-scraper');
 
 exports.handler = async (event) => {
-  console.log(decodeURI(event.queryStringParameters.url));
+  console.log(decodeURIComponent(event.queryStringParameters.url));
 
   try {
-    const res = await ogs({ url: decodeURI(event.queryStringParameters.url) });
+    const res = await ogs({ url: decodeURIComponent(event.queryStringParameters.url) });
     const response = {
       statusCode: 200,
       //  Uncomment below to enable CORS requests

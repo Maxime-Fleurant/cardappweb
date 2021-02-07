@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-cardappweb-dev-104515-deployment",
-          "S3Key": "amplify-builds/cardappweb24a94fc4-77614238695a2b434858-build.zip"
+          "S3Key": "amplify-builds/cardappweb24a94fc4-586e3573535470493961-build.zip"
         }
       }
     },

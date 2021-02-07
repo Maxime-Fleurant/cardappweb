@@ -4,11 +4,16 @@ import { schema } from './schema';
 
 
 
-const { Link, Image, Note, Card } = initSchema(schema);
+const { Tag, TagCard, Card, Note, TagNote, Image, TagImage, Link, TagLink } = initSchema(schema);
 
 export {
-  Link,
-  Image,
+  Tag,
+  TagCard,
+  Card,
   Note,
-  Card
+  TagNote,
+  Image,
+  TagImage,
+  Link,
+  TagLink
 };
